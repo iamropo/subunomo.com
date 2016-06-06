@@ -1,0 +1,179 @@
+/*For Checking Layout & Colors*/
+/** {
+	border: 1px solid;
+}*/
+
+#sidebar {
+	background-color: #e3e3e3;
+}
+
+/* Common Stuff */
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.flex {
+	display: flex;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+}
+/*Font Awesome*/
+.fa {
+	color: #000000;
+}
+
+/*----End of Common Stuff---*/
+
+#sidebar {
+	width: 25%;
+	height: 100%;
+	padding-top: 3%;
+	padding-bottom: 3%;
+	flex-flow: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.carousel {
+	width: 75%;
+	height: 100%;
+	padding-top: 3%;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: flex-start;
+	background-color: #3d3d3d;
+	overflow: hidden;
+}
+
+/*Styling the Contents of the Sidebar*/
+#logo {
+	width: 80%;
+}
+
+.link {
+	width: 100%;
+	height: 40%;
+	flex-flow: column;
+	justify-content: space-around;
+}
+
+.link li {
+	display: inherit;
+	justify-content: center;
+	align-items: center;
+}
+/*---End of Styling of the Contents of the Sidebar---*/
+
+/*Styling the Contents of the Main Body*/
+.header {
+	width: 100%;
+	margin-top: 0;
+	margin-bottom: 20px;
+	padding-left: 17.5%;
+	align-content: flex-start;
+	color: #f3f3f3;
+	font-weight: 500;
+}
+
+.description {
+	width: 100%;
+	height: 5%;
+	margin-bottom: 30px;
+	padding-left: 17.5%;
+	color: #eaeaea;
+	font-size: 1em;
+	font-weight: 300;
+}
+/*Carousel*/
+.media-container {
+	width: 100%;
+	height: 65%;
+	margin-bottom: 30px; 
+	flex-flow: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.media {
+	width: 100%;
+	height: 90%;
+	justify-content: center;
+}
+
+#play-area {
+	width: 65%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+#play-area img {
+	width: 100%;
+	position: absolute;
+	display: inline;
+}
+
+.button {
+	width: 15%;
+	height: 100%;
+	background-color: #3d3d3d;
+	display: inherit;
+	justify-content: center;
+	align-items: center;
+	z-index: 5;
+}
+
+.button img {
+	cursor: pointer;
+}
+
+#media-link {
+	width: 100%;
+	height: 5%;
+	justify-content: center;
+	align-items: center;
+}
+
+#media-link li {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	margin: 5px;
+	cursor: pointer;
+	background-color: #5b5b5b;
+}
+
+#media-link li:hover {
+	background-color: #ffffff;
+}
+/*End Of Carousel*/
+#footer {
+	width: 100%;
+	height: 5%;
+	justify-content: center;
+	align-items: center;
+	color: #eaeaea;
+	font-size: .8em;
+	font-weight: 100;
+}
+
+#year {
+	white-space: pre-wrap;
+}
