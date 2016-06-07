@@ -2,11 +2,11 @@ var prevButton = document.getElementById('prev-button');
 var nextButton = document.getElementById('next-button');
 
 var mediaLinks = document.getElementsByClassName('media-link');
+var activeLinkColor = '#ffffff';
+var inactiveLinkColor = '#5b5b5b';
 var current = mediaLinks[0];
 var next;
 var counter = 0;
-//initialising
-
 
 function buttonState(element) {
 
@@ -35,14 +35,14 @@ function switchLinks() {
 		counter = 0;
 		next = mediaLinks[counter];
 		buttonState(next);
-		next.style.backgroundColor = '#ffffff';
-		current.style.backgroundColor = '#5b5b5b';
+		next.style.backgroundColor = activeLinkColor;
+		current.style.backgroundColor = inactiveLinkColor;
 	
 	} else {
 
 		next = mediaLinks[counter + 1];
-		current.style.backgroundColor = '#5b5b5b';
-		next.style.backgroundColor = '#ffffff';
+		current.style.backgroundColor = inactiveLinkColor;
+		next.style.backgroundColor = activeLinkColor;
 		buttonState(next);
 		counter++;
 	
@@ -50,7 +50,7 @@ function switchLinks() {
 
 }
 
-current.style.backgroundColor = '#ffffff';
+current.style.backgroundColor = activeLinkColor;
 
 buttonState(current);
 
