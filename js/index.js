@@ -4,7 +4,7 @@ var mediaContainer = document.getElementById('media-container');
 
 var numberOfSlides = sliderData.length;
 var slides;
-var currentSlideIndex = 0;
+var currentSlideIndex;
 var leftDistance = -100;//starting value
 var leftOffset = 100;
 var slideInterval = 2000;
@@ -34,6 +34,7 @@ sliderData.forEach(function (slideData) {
  	var media = document.createElement('div');
 	var li = document.createElement('li');
 	var anchor = document.createElement('a');
+
 	leftDistance = leftDistance + leftOffset;
 
 	//header:
@@ -57,6 +58,8 @@ sliderData.forEach(function (slideData) {
 
 	anchor.href = '#' + slideData.id;
 	anchor.className = 'media-link';
+	anchor.setAttribute('prev', slideData.prev);
+	anchor.setAttribute('next', slideData.next);
 	li.appendChild(anchor);
 	mediaLinksContainer.appendChild(li);
 });

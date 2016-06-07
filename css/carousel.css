@@ -78,6 +78,10 @@
 	cursor: pointer;
 }
 
+#prev-button {
+	visibility: hidden;
+ }
+
 #media-links-container {
 	width: 100%;
 	height: 5%;
