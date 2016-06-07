@@ -1,5 +1,5 @@
 var sliderData = [{
-	id: '1',
+	id: 'video-1',
 	header: 'I AM',
 	description: 'A music artist/producer based in New Delhi, India with my roots in Arunachal Pradesh.',
 	image: 'images/blink182.jpg',
@@ -8,7 +8,7 @@ var sliderData = [{
 	class: 'slide1'
 },
 {
-	id: '2',
+	id: 'video-2',
 	header: 'PANTERA',
 	description: 'Cowboys From Hell.',
 	image: 'images/pantera.jpg',
@@ -17,7 +17,7 @@ var sliderData = [{
 	class: 'slide2'
 },
 {
-	id: '3',
+	id: 'video-3',
 	header: 'GUNS N ROSES',
 	description: 'The Most Dangerous Band In The World.',
 	image: 'images/guns-n-roses.jpg',
@@ -26,7 +26,7 @@ var sliderData = [{
 	class: 'slide3'
 },
 {
-	id: '4',
+	id: 'video-4',
 	header: 'GREEN DAY',
 	description: 'American Idiots.',
 	image: 'images/green-day.jpg',

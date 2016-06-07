@@ -34,19 +34,20 @@ sliderData.forEach(function (slideData) {
  	var media = document.createElement('div');
 	var li = document.createElement('li');
 	var anchor = document.createElement('a');
+	var slideCounter = slideData.id.split('-')[1];
 
 	leftDistance = leftDistance + leftOffset;
 
 	//header:
 	header.innerHTML = slideData.header;
-	header.className = 'header';
+	header.className = 'header' + ' ' + slideCounter;
 	//description:
 	description.innerHTML = slideData.description;
-	description.className = 'description';
+	description.className = 'description' + ' ' + slideCounter;
 	//medias:
 	media.style.backgroundImage = 'url(' + slideData.image + ')';
 	media.style.backgroundSize = 'cover';
-	media.className = 'media';
+	media.className = 'media' + ' ' + slideCounter;
 	media.id = slideData.id;
 
 	// leftOffsetElement([header, description, media], leftDistance);
@@ -58,6 +59,7 @@ sliderData.forEach(function (slideData) {
 
 	anchor.href = '#' + slideData.id;
 	anchor.className = 'media-link';
+	anchor.id = slideCounter;
 	anchor.setAttribute('prev', slideData.prev);
 	anchor.setAttribute('next', slideData.next);
 	li.appendChild(anchor);
