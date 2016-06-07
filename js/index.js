@@ -1,29 +1,69 @@
-var numberOfSlides = data.length;
-var playArea = document.getElementById('play-area');
-var mediaLink = document.getElementById('media-link');
-var leftDistance = -100;//starting value
+var headerContainer = document.getElementById('header-container');
+var descriptionContainer = document.getElementById('description-container');
+var mediaContainer = document.getElementById('media-container');
+
+var numberOfSlides = sliderData.length;
 var slides;
+var currentSlideIndex = 0;
+var leftDistance = -100;//starting value
+var leftOffset = 100;
+var slideInterval = 2000;
+var animationSteps = numberOfSlides;
+var animationDuration = 3;
 
-data.forEach(function (data) {
+var mediaLinksContainer = document.getElementById('media-links-container');
 
-	var img = document.createElement('img');
+// function leftOffsetElement([header, decription, media], leftDistance) {
+// 	var elements = arguments[0];
+// 	elements.forEach(function (element) {
+// 		element.style.left = leftDistance + '%';
+// 	});
+// }
+
+function addSlideClassName([header, description, media], slideData) {
+	var elements = arguments[0];
+	elements.forEach(function (element) {
+		element.className = element.className + ' ' + 'slide';
+	});
+}
+
+sliderData.forEach(function (slideData) {
+
+	var header = document.createElement('h2');
+	var description = document.createElement('div');
+ 	var media = document.createElement('div');
 	var li = document.createElement('li');
 	var anchor = document.createElement('a');
+	leftDistance = leftDistance + leftOffset;
 
-	img.src = data.image;
-	imageName = data.image.split('/');
-	img.alt = imageName[imageName.length - 1];
-	img.class = 'slide';
-	img.id = data.id;
-	leftDistance = leftDistance + 100;
-	img.style.left = leftDistance + '%';
-	playArea.appendChild(img);
+	//header:
+	header.innerHTML = slideData.header;
+	header.className = 'header';
+	//description:
+	description.innerHTML = slideData.description;
+	description.className = 'description';
+	//medias:
+	media.style.backgroundImage = 'url(' + slideData.image + ')';
+	media.style.backgroundSize = 'cover';
+	media.className = 'media';
+	media.id = slideData.id;
 
-	anchor.href = '#' + data.id;
+	// leftOffsetElement([header, description, media], leftDistance);
+	addSlideClassName([header, description, media], slideData);
+	//appending to parent
+	headerContainer.appendChild(header);
+	descriptionContainer.appendChild(description);
+	mediaContainer.appendChild(media);
+
+	anchor.href = '#' + slideData.id;
+	anchor.className = 'media-link';
 	li.appendChild(anchor);
-	mediaLink.appendChild(li);
-
-})
+	mediaLinksContainer.appendChild(li);
+});
 
 slides = document.getElementsByClassName('slide');
+
+
+
+
 
