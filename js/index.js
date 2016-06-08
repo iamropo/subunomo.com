@@ -1,74 +1,34 @@
-var headerContainer = document.getElementById('header-container');
-var descriptionContainer = document.getElementById('description-container');
-var mediaContainer = document.getElementById('media-container');
+//DOM Functions:
+var getElementById = document.getElementById;
+var getElementsByClassName = document.getElementsByClassName;
+var createElement = document.createElement;
+var loopCollection = Array.prototype.forEach.call;
+var getAttribute = function (element, attribute) {
+	return element.getAttribute(attribute);
+}
 
-var numberOfSlides = sliderData.length;
-var slides;
-var currentSlideIndex;
-var leftDistance = -100;//starting value
-var leftOffset = 100;
-var slideInterval = 2000;
-var animationSteps = numberOfSlides;
-var animationDuration = 3;
+//Containers of the Headers, Descriptions and media:
+var headerContainer = getElementById('header-container');
+var descriptionContainer = getElementById('description-container');
+var mediaContainer = getElementById('media-container');
 
-var mediaLinksContainer = document.getElementById('media-links-container');
-
-// function leftOffsetElement([header, decription, media], leftDistance) {
-// 	var elements = arguments[0];
-// 	elements.forEach(function (element) {
-// 		element.style.left = leftDistance + '%';
-// 	});
-// }
-
-function addSlideClassName([header, description, media], slideData) {
-	var elements = arguments[0];
-	elements.forEach(function (element) {
-		element.className = element.className + ' ' + 'slide';
+//Function for adding common Class Name:
+function setClassName(elements, className) {
+	elements.forEach(function(element) {
+		element.className = className;
 	});
 }
 
-sliderData.forEach(function (slideData) {
+//Rendering the Slides Data:
+slidesData.forEach(function (slideData) {
 
-	var header = document.createElement('h2');
-	var description = document.createElement('div');
- 	var media = document.createElement('div');
-	var li = document.createElement('li');
-	var anchor = document.createElement('a');
-	var slideCounter = slideData.id.split('-')[1];
+	var header = createElement('h2');
+	var description = createElement('div');
+	var media = createElement('img');
 
-	leftDistance = leftDistance + leftOffset;
-
-	//header:
 	header.innerHTML = slideData.header;
-	header.className = 'header' + ' ' + slideCounter;
-	//description:
 	description.innerHTML = slideData.description;
-	description.className = 'description' + ' ' + slideCounter;
-	//medias:
-	media.style.backgroundImage = 'url(' + slideData.image + ')';
-	media.style.backgroundSize = 'cover';
-	media.className = 'media' + ' ' + slideCounter;
-	media.id = slideData.id;
 
-	// leftOffsetElement([header, description, media], leftDistance);
-	addSlideClassName([header, description, media], slideData);
-	//appending to parent
-	headerContainer.appendChild(header);
-	descriptionContainer.appendChild(description);
-	mediaContainer.appendChild(media);
 
-	anchor.href = '#' + slideData.id;
-	anchor.className = 'media-link';
-	anchor.id = slideCounter;
-	anchor.setAttribute('prev', slideData.prev);
-	anchor.setAttribute('next', slideData.next);
-	li.appendChild(anchor);
-	mediaLinksContainer.appendChild(li);
+
 });
-
-slides = document.getElementsByClassName('slide');
-
-
-
-
-

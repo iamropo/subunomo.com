@@ -11,8 +11,8 @@
 		height: 100%;
 		overflow: hidden;
 }
- 
-#header-display-area {
+
+#header-container {
 	width: 640px;
 	height: 30px;
 	margin-top: 0;
@@ -20,9 +20,11 @@
 	color: #f3f3f3;
 	font-weight: 500;
 	position: relative;
+	overflow: hidden;
+	flex-wrap: nowrap;
 }
 
-#description-display-area {
+#description-container  {
 	width: 640px;
 	height: 30px;
 	margin-bottom: 30px;
@@ -30,37 +32,17 @@
 	font-size: 1em;
 	font-weight: 300;
 	position: relative;
-}
-
-#header-container, #description-container {
-	height: 100%;
-	margin: 0;
-	padding: 0;
-	align-items: center;
-	position: absolute;
-}
-
-.header, .description {
-	width: 640px;
+	overflow: hidden;
+	flex-wrap: nowrap;
 }
 
 /*inner media: */
-#display-area {
+#media-container {
 	width: 640px;
 	height: 360px;
 	overflow: hidden;
 	position: relative;
-}
-
-#media-container {
-	height: 360px;
-	position: absolute;
-	overflow: hidden;
-}
-
-#media-container div {
-	width: 640px;
-	height: 360px;
+	flex-wrap: nowrap;
 }
 
 .button {
@@ -70,7 +52,7 @@
 	display: inherit;
 	justify-content: center;
 	align-items: center;
-	align-self: flex-end; 
+	align-self: flex-end;
 	z-index: 5;
 }
 
@@ -90,22 +72,14 @@
 	align-items: center;
 }
 
-#media-links-container li {
+#media-links-container a {
 	width: 10px;
 	height: 10px;
-	margin: 5px;
-	cursor: pointer;
-	display: flex;
-}
-
-#media-links-container li a {
-	width: 100%;
-	height: 100%;
 	border-radius: 50%;
 	background-color: #5b5b5b;
 }
 
-#media-links-container li a:hover {
+#media-links-container a:hover {
 	background-color: #ffffff;
 }
 /*End Of Carousel*/
