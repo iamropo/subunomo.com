@@ -54,9 +54,9 @@ function renderData(slidesData) {
 		var anchor = createElement('a');
 		var initialLinkState = 'off'
 		//Redeclaring the link state, if it's the first link:
-		// if( index === 0 ) {
-		// 	initialLinkState = 'on';
-		// }
+		if( index === 0 ) {
+			initialLinkState = 'on';
+		}
 
 		header.innerHTML = slideData.header;
 		description.innerHTML = slideData.description;

@@ -4,22 +4,22 @@ var slides = getElementsByClassName('slide');
 //Fetching the media links:
 var mediaLinks = getElementsByClassName('media-link');
 
-// function slide(slideOffset, prevIndex, currentIndex) {
-//
-//   var slideOffsetPercentage = 100;
-//
-//   function translateSlides() {
-//     Array.prototype.forEach.call(slides, function (slide) {
-//       slide.style.transform = 'translateX(' + slideOffset.toString() + '%)';
-//       slide.style.transitionProperty = 'transform';
-//       slide.style.transition = '1s';
-//     });
-//   }
-//
-//   slideOffset = slideOffset + (prevIndex - currentIndex) * slideOffsetPercentage;
-//   translateSlides();
-//
-// }
+function slide(slideOffset, prevIndex, currentIndex) {
+
+  var slideOffsetPercentage = 100;
+
+  function translateSlides() {
+    Array.prototype.forEach.call(slides, function (slide) {
+      slide.style.transform = 'translateX(' + slideOffset.toString() + '%)';
+      slide.style.transitionProperty = 'transform';
+      slide.style.transition = '1s';
+    });
+  }
+
+  slideOffset = 0;
+  translateSlides();
+
+}
 
 function toggle(link) {
   var state = link.className.split(' ')[1];
@@ -31,11 +31,11 @@ function toggle(link) {
   }
 }
 
-function startCarousel() {
+function startCarousel(index) {
 
   var resetIndex = 0;
-  var currentIndex = 0;
-  var prevIndex;
+  var currentIndex = index;
+  var prevIndex = 0;
   var slideOffset = 0;//initial slide offset, for the side function
 
   function switchLink() {
@@ -57,4 +57,4 @@ function startCarousel() {
 
 }
 
-startCarousel();
+startCarousel(1);
