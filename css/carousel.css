@@ -13,7 +13,7 @@
 }
 
 #header-container {
-	width: 640px;
+	width: inherit;/*640px*/
 	height: 30px;
 	margin-top: 0;
 	margin-bottom: 20px;
@@ -21,11 +21,11 @@
 	font-weight: 500;
 	position: relative;
 	overflow: hidden;
-	flex-wrap: nowrap;
+	align-items: center;
 }
 
 #description-container  {
-	width: 640px;
+	width: inherit;
 	height: 30px;
 	margin-bottom: 30px;
 	color: #eaeaea;
@@ -33,16 +33,22 @@
 	font-weight: 300;
 	position: relative;
 	overflow: hidden;
-	flex-wrap: nowrap;
+	align-items: center;
 }
 
-/*inner media: */
 #media-container {
-	width: 640px;
+	width: inherit;
 	height: 360px;
 	overflow: hidden;
 	position: relative;
-	flex-wrap: nowrap;
+}
+
+.slide {
+	width: inherit;
+	height: inherit;
+	padding: 0;
+	margin: 0;
+	position: absolute;
 }
 
 .button {
@@ -60,10 +66,6 @@
 	cursor: pointer;
 }
 
-#prev-button {
-	visibility: hidden;
- }
-
 #media-links-container {
 	width: 100%;
 	height: 5%;
@@ -75,8 +77,17 @@
 #media-links-container a {
 	width: 10px;
 	height: 10px;
+	margin-right: 10px;
 	border-radius: 50%;
 	background-color: #5b5b5b;
+}
+
+#media-links-container a.off {
+	background-color: #5b5b5b;
+}
+
+#media-links-container a.on {
+	background-color: #ffffff;
 }
 
 #media-links-container a:hover {
