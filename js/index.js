@@ -33,14 +33,7 @@ function appendToParent(parents, childrens){
 		parent.appendChild(childrens[index]);
 	});
 }
-//Function to offset elements
-function offsetElements(elements, initialOffset) {
-	var initialOffset = initialOffset;
-	elements.forEach(function (element) {
-		element.style.left = initialOffset.toString() + '%';
-		initialOffset = initialOffset + 100;
-	});
-}
+
 //Function for offsetting the Slides:
 function offsetElements(elements, offsetPercentage, offsetFactor) {
 	var offsetValue = (offsetPercentage * offsetFactor).toString();
@@ -49,7 +42,7 @@ function offsetElements(elements, offsetPercentage, offsetFactor) {
 	});
 }
 //Rendering the Slides Data:
-function renderData() {
+function renderData(slidesData) {
 	//Offsett percentage value for the elements that are going to slide
 	var offsetPercentage = 100;
 	var slideClassName = 'slide';
@@ -61,9 +54,9 @@ function renderData() {
 		var anchor = createElement('a');
 		var initialLinkState = 'off'
 		//Redeclaring the link state, if it's the first link:
-		if( index === 0 ) {
-			initialLinkState = 'on';
-		}
+		// if( index === 0 ) {
+		// 	initialLinkState = 'on';
+		// }
 
 		header.innerHTML = slideData.header;
 		description.innerHTML = slideData.description;
@@ -81,4 +74,4 @@ function renderData() {
 
 }
 
-renderData();
+renderData(slidesData);

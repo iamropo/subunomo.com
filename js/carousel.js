@@ -4,22 +4,22 @@ var slides = getElementsByClassName('slide');
 //Fetching the media links:
 var mediaLinks = getElementsByClassName('media-link');
 
-function slide(slideOffset, prevIndex, currentIndex) {
-
-  var slideOffsetPercentage = 100;
-
-  function translateSlides() {
-    Array.prototype.forEach.call(slides, function (slide) {
-      slide.style.transform = 'translateX(' + slideOffset.toString() + '%)';
-      slide.style.transitionProperty = 'transform';
-      slide.style.transition = '1s';
-    });
-  }
-
-  slideOffset = slideOffset + (prevIndex - currentIndex) * slideOffsetPercentage;
-  translateSlides();
-
-}
+// function slide(slideOffset, prevIndex, currentIndex) {
+//
+//   var slideOffsetPercentage = 100;
+//
+//   function translateSlides() {
+//     Array.prototype.forEach.call(slides, function (slide) {
+//       slide.style.transform = 'translateX(' + slideOffset.toString() + '%)';
+//       slide.style.transitionProperty = 'transform';
+//       slide.style.transition = '1s';
+//     });
+//   }
+//
+//   slideOffset = slideOffset + (prevIndex - currentIndex) * slideOffsetPercentage;
+//   translateSlides();
+//
+// }
 
 function toggle(link) {
   var state = link.className.split(' ')[1];
@@ -31,17 +31,19 @@ function toggle(link) {
   }
 }
 
-function carousel(index) {
+function startCarousel() {
 
   var resetIndex = 0;
-  var currentIndex = index;
-  var prevIndex = 0;
+  var currentIndex = 0;
+  var prevIndex;
   var slideOffset = 0;//initial slide offset, for the side function
 
   function switchLink() {
-    toggle(mediaLinks[prevIndex]);
+    if (prevIndex !== undefined) {
+      toggle(mediaLinks[prevIndex]);
+    }
     toggle(mediaLinks[currentIndex]);
-    slide(slideOffset, prevIndex, currentIndex);
+    // slide(slideOffset, prevIndex, currentIndex);
     prevIndex = currentIndex;
     if (currentIndex + 1 === mediaLinks.length) {
       currentIndex = resetIndex;
@@ -51,8 +53,8 @@ function carousel(index) {
     }
   }
 
-  var startCarousel = setInterval(switchLink, 3000);
+  var carouselTimer = setInterval(switchLink, 3000);
 
 }
 
-carousel(1);
+startCarousel();
