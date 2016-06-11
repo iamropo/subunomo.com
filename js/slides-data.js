@@ -1,12 +1,12 @@
 var slidesData = [
 {
-	header: 'I AM',
-	description: 'A music artist/producer based in New Delhi, India with my roots in Arunachal Pradesh.',
+	header: 'BLINK 182',
+	description: 'Enema Of The State.',
 	media: 'images/blink182.jpg'
 },
 {
 	header: 'MEGADETH',
-	description: 'Symphony of Destruction.',
+	description: 'Symphony Of Destruction.',
 	media: 'images/megadeth.jpg'
 },
 {
