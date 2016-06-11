@@ -26,8 +26,6 @@ function translateSlides(slides, slideOffset) {
   });
 }
 
-
-
 function startCarousel() {
 
   var index = 0;
@@ -61,7 +59,7 @@ function startCarousel() {
 
 var initiateCarousel = startCarousel();
 //Stopping the Carousel:
-var stopCarousel =   qualifiedCollection.forEach(function (collection) {
+qualifiedCollection.forEach(function (collection) {
    loopCollection(collection, function (element) {
        element.addEventListener('mousedown', function () {
         clearInterval(initiateCarousel);
