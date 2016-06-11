@@ -5,9 +5,9 @@ var slidesData = [
 	media: 'images/blink182.jpg'
 },
 {
-	header: 'PANTERA',
-	description: 'Cowboys From Hell.',
-	media: 'images/pantera.jpg'
+	header: 'MEGADETH',
+	description: 'Symphony of Destruction.',
+	media: 'images/megadeth.jpg'
 },
 {
 	header: 'GUNS N ROSES',

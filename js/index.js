@@ -1,8 +1,6 @@
-//Containers of the Headers, Descriptions and media:
-var headerContainer = document.getElementById('header-container');
-var descriptionContainer = getElementById('description-container');
-var mediaContainer = getElementById('media-container');
+//Required Containers:
 var mediaLinksContainer = getElementById('media-links-container');
+var slideContainer = getElementById('slide-container');
 //Function for looping a collection: (Doesn't work, Fix it.)
 var loopCollection = Array.prototype.forEach.call;
 
@@ -28,47 +26,48 @@ function setClassName(elements, classNames) {
 	});
 }
 //Function for appending child element to parent element
-function appendToParent(parents, childrens){
-	parents.forEach(function (parent, index) {
-		parent.appendChild(childrens[index]);
+function appendToContainer(parent, childrens){
+	childrens.forEach(function (children) {
+		parent.appendChild(children);
 	});
 }
 
 //Function for offsetting the Slides:
-function offsetElements(elements, offsetPercentage, offsetFactor) {
+function offsetElement(element, offsetPercentage, offsetFactor) {
 	var offsetValue = (offsetPercentage * offsetFactor).toString();
-	elements.forEach(function (element) {
-		element.style.left = offsetValue + '%';
-	});
+	element.style.left = offsetValue + '%';
 }
 //Rendering the Slides Data:
 function renderData(slidesData) {
 	//Offsett percentage value for the elements that are going to slide
 	var offsetPercentage = 100;
-	var slideClassName = 'slide';
 	slidesData.forEach(function (slideData, index) {
 
+		var slide = createElement('div');
 		var header = createElement('h2');
 		var description = createElement('div');
 		var media = createElement('img');
 		var anchor = createElement('a');
 		var initialLinkState = 'off'
-		//Redeclaring the link state, if it's the first link:
-		if( index === 0 ) {
-			initialLinkState = 'on';
-		}
 
+		slide.className = 'slide';
+		slide.id = 'slide-' + index;
+		slide.style.position = 'absolute';
 		header.innerHTML = slideData.header;
+		header.className = 'header';
 		description.innerHTML = slideData.description;
+		description.className = 'description';
 		media.src = slideData.media;
+		media.className = 'media';
 		anchor.className = 'media-link' + ' ' + initialLinkState;
+		anchor.id = index;
 
-		var childrens = [header, description, media, anchor];
-		var slideClassChildrens = childrens.slice(0, 3);
+		var slideChildrens = [header, description, media];
 
-		setClassName(slideClassChildrens, [slideClassName, slideClassName + index]);
-		offsetElements(slideClassChildrens, offsetPercentage, index);
-		appendToParent([headerContainer, descriptionContainer, mediaContainer, mediaLinksContainer], childrens);
+		mediaLinksContainer.appendChild(anchor);
+		appendToContainer(slide, slideChildrens);
+		offsetElement(slide, offsetPercentage, index);
+		slideContainer.appendChild(slide);
 
 	});
 

@@ -4,57 +4,49 @@ var slides = getElementsByClassName('slide');
 //Fetching the media links:
 var mediaLinks = getElementsByClassName('media-link');
 
-function slide(slideOffset, prevIndex, currentIndex) {
 
+function translateSlides(slides, slideOffset) {
+  Array.prototype.forEach.call(slides, function (slide) {
+    // slide.style.zIndex = '1';
+    slide.style.transform = 'translateX(' + slideOffset.toString() + '%)';
+    slide.style.transitionProperty = 'transform';
+    slide.style.transition = '1s';
+  });
+}
+
+function resetSlidePosition(slide, index, totalSlides) {
+  slide.style.zIndex = '-1';//So that it slides below the otehr slides
+  slide.style.left = '400%';
+}
+
+//Calling toggle fucntion would be more expensive
+
+function startCarousel() {
+
+  var index = 0;
+  /*For the slides*/
+  var slideOffset = 0;
   var slideOffsetPercentage = 100;
-
-  function translateSlides() {
-    Array.prototype.forEach.call(slides, function (slide) {
-      slide.style.transform = 'translateX(' + slideOffset.toString() + '%)';
-      slide.style.transitionProperty = 'transform';
-      slide.style.transition = '1s';
-    });
-  }
-
-  slideOffset = 0;
-  translateSlides();
-
-}
-
-function toggle(link) {
-  var state = link.className.split(' ')[1];
-  if (state === 'off') {
-    link.className = link.className.replace(state, 'on');
-  }
-  else {
-    link.className = link.className.replace(state, 'off');
-  }
-}
-
-function startCarousel(index) {
-
-  var resetIndex = 0;
-  var currentIndex = index;
-  var prevIndex = 0;
-  var slideOffset = 0;//initial slide offset, for the side function
+  var currentSlideIndex;
+  mediaLinks[index].className = mediaLinks[index].className.replace('off', 'on');
 
   function switchLink() {
-    if (prevIndex !== undefined) {
-      toggle(mediaLinks[prevIndex]);
+
+    var prevSlideIndex = currentSlideIndex || index;
+    mediaLinks[index].className = mediaLinks[index].className.replace('on', 'off');
+    index++;
+    if (index === mediaLinks.length) {
+      index = 0;
     }
-    toggle(mediaLinks[currentIndex]);
-    // slide(slideOffset, prevIndex, currentIndex);
-    prevIndex = currentIndex;
-    if (currentIndex + 1 === mediaLinks.length) {
-      currentIndex = resetIndex;
-    }
-    else {
-      currentIndex = currentIndex + 1;
-    }
+    currentSlideIndex = index;
+    mediaLinks[index].className = mediaLinks[index].className.replace('off', 'on');
+    slideOffset = slideOffset + ((prevSlideIndex - currentSlideIndex) * slideOffsetPercentage)
+    translateSlides(slides, slideOffset);
+
   }
 
   var carouselTimer = setInterval(switchLink, 3000);
 
 }
 
-startCarousel(1);
+startCarousel();

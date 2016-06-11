@@ -1,54 +1,54 @@
 /*Carousel*/
 #slides-and-buttons-container {
 	width: 100%;
-	min-height: 60%;
+	min-height: 80%;
 	margin-bottom: 30px;
 	justify-content: center;
 }
 
 #slide-container {
 		width: 640px;
-		height: 100%;
+		height: inherit;
+		position: relative;
 		overflow: hidden;
 }
 
-#header-container {
+.slide {
+	width: inherit;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	display: flex;
+	flex-flow: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.header {
 	width: inherit;/*640px*/
 	height: 30px;
 	margin-top: 0;
 	margin-bottom: 20px;
 	color: #f3f3f3;
 	font-weight: 500;
-	position: relative;
-	overflow: hidden;
 	align-items: center;
 }
 
-#description-container  {
+.description {
 	width: inherit;
 	height: 30px;
 	margin-bottom: 30px;
 	color: #eaeaea;
 	font-size: 1em;
 	font-weight: 300;
-	position: relative;
-	overflow: hidden;
 	align-items: center;
 }
 
-#media-container {
+.media {
 	width: inherit;
 	height: 360px;
 	overflow: hidden;
-	position: relative;
-}
-
-.slide {
-	width: inherit;
-	height: inherit;
-	padding: 0;
-	margin: 0;
-	position: absolute;
 }
 
 .button {
