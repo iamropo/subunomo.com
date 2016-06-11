@@ -7,27 +7,20 @@ var mediaLinks = getElementsByClassName('media-link');
 
 function translateSlides(slides, slideOffset) {
   Array.prototype.forEach.call(slides, function (slide) {
-    // slide.style.zIndex = '1';
     slide.style.transform = 'translateX(' + slideOffset.toString() + '%)';
     slide.style.transitionProperty = 'transform';
     slide.style.transition = '1s';
   });
 }
 
-function resetSlidePosition(slide, index, totalSlides) {
-  slide.style.zIndex = '-1';//So that it slides below the otehr slides
-  slide.style.left = '400%';
-}
-
-//Calling toggle fucntion would be more expensive
-
 function startCarousel() {
 
   var index = 0;
-  /*For the slides*/
+  //For the slides
   var slideOffset = 0;
   var slideOffsetPercentage = 100;
   var currentSlideIndex;
+
   mediaLinks[index].className = mediaLinks[index].className.replace('off', 'on');
 
   function switchLink() {
