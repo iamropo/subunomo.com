@@ -51,7 +51,7 @@
 	overflow: hidden;
 }
 
-.button {
+.button-container {
 	width: 15%;
 	height: 360px;
 	background-color: #3d3d3d;
@@ -62,7 +62,7 @@
 	z-index: 5;
 }
 
-.button img {
+.button-container img {
 	cursor: pointer;
 }
 

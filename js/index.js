@@ -18,6 +18,17 @@ function getAttribute(element, attribute) {
 	return element.getAttribute(attribute);
 }
 
+//Functions for HTML Collections
+function concatenetCollections(collections) {
+  return Array.prototype.reduce.call(collections, function (prev, current) {
+    return Array.prototype.concat.call(prev, current);
+  });
+}
+
+function loopCollection(collection, callback) {
+  return Array.prototype.forEach.call(collection, callback);
+}
+
 //Function for adding common Class Name:
 function setClassName(elements, classNames) {
 	var className = classNames.join(' ');
