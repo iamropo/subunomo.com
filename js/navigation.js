@@ -1,25 +1,11 @@
 /*NOTE: THE SLIDE OFFSET VALUES ARE NEGATIVE,
  BECAUSE THE SLIDES ARE OFFSETTED RELATIVE TO RIGHT OFFSET WHICH TAKES NEGATIVE VALUE TO OCCUR*/
 
-//Function to retrieve the index of the active slide based on the active media link:
-function getActiveSlideIndex() {
-
-  var activeIndex;
-
-  loopCollection(mediaLinks, function (link, index) {
-    if (link.className.indexOf('on') !== -1) {
-       activeIndex = index;
-    }
-  });
-
-  return activeIndex;
-
-}
-
 function mediaLinkNavigation(link) {
 
   var activeSlideIndex = getActiveSlideIndex();
   var requestedSlideIndex = link.id;
+  toggleButton(Number(requestedSlideIndex));
   var slideOffsetPercentage = 100;
   var activeSlideOffset = - activeSlideIndex * slideOffsetPercentage;
   var slideOffset;
@@ -49,6 +35,7 @@ function buttonNavigation(direction) {
   } else {
     var prevSlideIndex = activeSlideIndex - 1;
   }
+  toggleButton(nextSlideIndex || prevSlideIndex);
   //dealing with media links, also the Boundary issue will be solved by hiding the button with css
   mediaLinks[activeSlideIndex].className = mediaLinks[activeSlideIndex].className.replace('on', 'off');
   if (nextSlideIndex) {

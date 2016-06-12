@@ -28,7 +28,29 @@ function concatenetCollections(collections) {
 function loopCollection(collection, callback) {
   return Array.prototype.forEach.call(collection, callback);
 }
-
+//Function to retrieve the index of the active slide based on the active media link:
+function getActiveSlideIndex() {
+  var activeIndex;
+  loopCollection(mediaLinks, function (link, index) {
+    if (link.className.indexOf('on') !== -1) {
+       activeIndex = index;
+    }
+  });
+  return activeIndex;
+}
+//To toggle visibility of the buttons
+function toggleButton(index) {
+  if (index === 0) {
+    getElementById('prev-button').style.visibility = 'hidden';
+    getElementById('next-button').style.visibility = 'visible';
+  } else if (index === 3) {
+    getElementById('prev-button').style.visibility = 'visible';
+    getElementById('next-button').style.visibility = 'hidden';
+  } else {
+    getElementById('prev-button').style.visibility = 'visible';
+    getElementById('next-button').style.visibility = 'visible';
+  }
+}
 //Function for adding common Class Name:
 function setClassName(elements, classNames) {
 	var className = classNames.join(' ');

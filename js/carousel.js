@@ -35,9 +35,8 @@ function startCarousel() {
   var currentSlideIndex;
 
   mediaLinks[index].className = mediaLinks[index].className.replace('off', 'on');
-
+  toggleButton(index);
   function switchLink() {
-
     var prevSlideIndex = currentSlideIndex || index;
     mediaLinks[index].className = mediaLinks[index].className.replace('on', 'off');
     index++;
@@ -45,6 +44,7 @@ function startCarousel() {
       index = 0;
     }
     currentSlideIndex = index;
+    toggleButton(currentSlideIndex);
     mediaLinks[index].className = mediaLinks[index].className.replace('off', 'on');
     slideOffset = slideOffset + ((prevSlideIndex - currentSlideIndex) * slideOffsetPercentage)
     translateSlides(slides, slideOffset);
