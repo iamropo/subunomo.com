@@ -1,16 +1,16 @@
 /*Carousel*/
 #slides-and-buttons-container {
 	width: 100%;
-	min-height: 80%;
-	margin-bottom: 30px;
+	height: 487px;
+	margin-bottom: 0px;
 	justify-content: center;
 }
 
 #slide-container {
-		width: 640px;
-		height: inherit;
-		position: relative;
-		overflow: hidden;
+	width: 704px;
+	height: inherit;
+	position: relative;
+	overflow: hidden;
 }
 
 .slide {
@@ -19,26 +19,22 @@
 	padding: 0;
 	margin: 0;
 	position: absolute;
-	display: flex;
-	flex-flow: column;
-	justify-content: space-around;
-	align-items: center;
 }
 
 .header {
-	width: inherit;/*640px*/
-	height: 30px;
+	width: inherit;/*704px*/
+	height: 28px;
 	margin-top: 0;
-	margin-bottom: 20px;
+	margin-bottom: 0px;
 	color: #f3f3f3;
 	font-weight: 500;
-	align-items: center;
 }
 
 .description {
 	width: inherit;
-	height: 30px;
-	margin-bottom: 30px;
+	height: 28px;
+	margin-top: 15px;
+	margin-bottom: 20px;
 	color: #eaeaea;
 	font-size: 1em;
 	font-weight: 300;
@@ -47,19 +43,18 @@
 
 .media {
 	width: inherit;
-	height: 360px;
+	height: 396px;
 	overflow: hidden;
 }
 
 .button-container {
-	width: 15%;
-	height: 360px;
+	width: 90px;
+	height: 396px;
 	background-color: #3d3d3d;
 	display: inherit;
 	justify-content: center;
 	align-items: center;
 	align-self: flex-end;
-	z-index: 5;
 }
 
 .button-container img {
@@ -69,7 +64,8 @@
 #media-links-container {
 	width: 100%;
 	height: 5%;
-	margin-bottom: 20px;
+	margin-top: 20px;
+	margin-bottom: 5px;
 	justify-content: center;
 	align-items: center;
 }
