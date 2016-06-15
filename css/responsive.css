@@ -1,43 +1,9 @@
 /*Default styling is for 1366 x 768*/
 
 /*Large Screen Devices*/
-@media (max-width: 1920px) and (max-height: 1080) {
-  #slides-and-buttons-container {
-    height: 531px;
-  }
 
-  #slide-container {
-  	width: 832px;
-  }
 
-  .media {
-  	height: 468px;
-  }
-
-  .button-container {
-  	height: 468px;
-  }
-}
-
-@media (max-width: 1280px) and (max-height: 1024px) {
-  #slides-and-buttons-container {
-    height: 451px;
-  }
-
-  #slide-container {
-    width: 640px;
-  }
-
-  .media {
-    height: 360px;
-  }
-
-  .button-container {
-    height: 360px;
-  }
-}
-
-@media (max-width: 1280px) and (max-height: 800px) {
+@media (max-width: 1280px) {
 
   a {
     font-size: .8em;
@@ -59,11 +25,7 @@
   }
 }
 
-@media (max-width: 1024px) and (max-height: 768px){
-
-  /*a {
-    font-size: .8em;
-  }*/
+@media (max-width: 1080px) or (max-width: 1024px) {
 
   #slides-and-buttons-container {
     height: 361px;
@@ -80,9 +42,14 @@
   .button-container {
     height: 270px;
   }
+
 }
 
-@media (max-width: 800px) and (max-height: 600px) {
+@media (max-width: 800px) {
+
+  body {
+    font-size: .8em;
+  }
 
   #base-container {/*body*/
     display: flex;
@@ -120,22 +87,103 @@
 
   #main-container {
     width: 100%;
-    height: 90%;
+    min-height: 90%;
   }
 
   #slides-and-buttons-container {
-    height: 379px;
+    height: 451px;
   }
 
   #slide-container {
-    width: 512px;
+    width: 640px;
   }
 
   .media {
-    height: 288px;
+    height: 360px;
   }
 
   .button-container {
-    height: 288px;
+    height: 360px;
   }
+
+}
+
+@media (max-width: 760px) {
+
+  #slides-and-buttons-container {
+    height: 415px;
+  }
+
+  #slide-container {
+    width: 576px;
+  }
+
+  .media {
+    height: 324px;
+  }
+
+  .button-container {
+    height: 324px;
+  }
+
+}
+
+@media (max-width: 640px) {
+
+  #slides-and-buttons-container {
+    height: 361px;
+  }
+
+  #slide-container {
+    width: 480px;
+  }
+
+  .media {
+    height: 270px;
+  }
+
+  .button-container {
+    height: 270px;
+  }
+
+}
+
+@media (max-width: 420px) {
+
+  #slides-and-buttons-container {
+    height: 235px;
+  }
+
+  #slide-container {
+    width: 256px;
+  }
+
+  .media {
+    height: 144px;
+  }
+
+  .button-container {
+    height: 144px;
+  }
+
+}
+
+@media (max-width: 320px) {
+
+  #slides-and-buttons-container {
+    height: 172px;
+  }
+
+  #slide-container {
+    width: 144px;
+  }
+
+  .media {
+    height: 81px;
+  }
+
+  .button-container {
+    height: 81px;
+  }
+
 }

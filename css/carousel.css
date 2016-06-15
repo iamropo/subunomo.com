@@ -48,17 +48,24 @@
 }
 
 .button-container {
-	width: 90px;
+	max-width: 90px;
 	height: 396px;
 	background-color: #3d3d3d;
 	display: inherit;
-	justify-content: center;
 	align-items: center;
 	align-self: flex-end;
 }
 
 .button-container img {
 	cursor: pointer;
+}
+
+#prev-button {
+	padding-right: 25%;
+}
+
+#next-button {
+	padding-left: 25%;
 }
 
 #media-links-container {
@@ -88,5 +95,6 @@
 
 #media-links-container a:hover {
 	background-color: #ffffff;
+	cursor: pointer;
 }
 /*End Of Carousel*/

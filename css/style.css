@@ -36,17 +36,17 @@ ul {
 a {
 	text-decoration: none;
 	font-weight: 300;
-	color: #000000;
+	color: #2a2a2a;
 }
 /*Font Awesome*/
 .fa {
-	color: #000000;
+	color: #2a2a2a;
 }
 
 /*----End of Common Stuff---*/
 
 #sidebar {
-	width: 30%;
+	min-width: 30%;
 	height: 100%;
 	padding-top: 3%;
 	padding-bottom: 3%;
@@ -56,7 +56,7 @@ a {
 }
 
 #main-container {
-	width: 70%;
+	min-width: 70%;
 	height: 100%;
 	flex-flow: column;
 	flex-wrap: wrap;
@@ -66,8 +66,14 @@ a {
 }
 
 /*Styling the Contents of the Sidebar*/
-#logo {
+#homepage-link {
 	width: 60%;
+	flex-flow: column;
+	justify-content: center;
+}
+#logo, #slogan {
+	width: 100%;
+	font-weight: 100;
 }
 
 #contact-link-container {
