@@ -4,7 +4,7 @@ loopCollection(slides, function (slide) {
 
 function handleSwipe(event) {
 
-  clearInterval(startCarousel)
+  clearInterval(initiateCarousel)
 
   var activeSlideIndex = getActiveSlideIndex()
   // Do Nothing for the first and the last slide
