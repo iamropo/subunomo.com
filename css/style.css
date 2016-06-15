@@ -19,6 +19,10 @@ html, body {
 	font-family: 'Roboto', sans-serif;
 }
 
+body {
+	min-height: 100%;
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -46,7 +50,7 @@ a {
 /*----End of Common Stuff---*/
 
 #sidebar {
-	min-width: 30%;
+	width: 30%;
 	height: 100%;
 	padding-top: 3%;
 	padding-bottom: 3%;
@@ -56,13 +60,11 @@ a {
 }
 
 #main-container {
-	min-width: 70%;
+	width: 70%;
 	height: 100%;
 	flex-flow: column;
-	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
-	overflow: hidden;
 }
 
 /*Styling the Contents of the Sidebar*/
