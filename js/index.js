@@ -157,7 +157,7 @@ qualifiedCollection.forEach(function (collection) {
 /* Note: The slide offset values are negative,
  because the slides are offset relative to right offset which takes negative value to occur*/
 
-function mediaLinkNavigation (link, anchor) {
+function mediaLinkNavigation (link) {
   var activeSlideIndex = getActiveSlideIndex()
   var requestedSlideIndex = Number(link.id)
   toggleButton(requestedSlideIndex)
