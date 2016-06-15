@@ -154,6 +154,10 @@ qualifiedCollection.forEach(function (collection) {
 
 /* Navigation.js */
 
+// Direction index based on hammer.js:
+var requestPreviousSlide = 4
+var requestNextSlide = 2
+
 /* Note: The slide offset values are negative,
  because the slides are offset relative to right offset which takes negative value to occur*/
 
@@ -174,17 +178,17 @@ function mediaLinkNavigation (link) {
   }
 }
 
-function buttonNavigation (direction) {
+function buttonAndSwipeNavigation (direction, activeSlideIndex) {
   // True is to forward, False is to backwards
   var slideOffset
   // Boundary issue will be solved by hiding the button with css
-  var activeSlideIndex = getActiveSlideIndex()
+  var activeSlideIndex = activeSlideIndex || getActiveSlideIndex()
   var slideOffsetPercentage = 100
   var currentOffset = activeSlideIndex * slideOffsetPercentage
 
-  if (direction) {
+  if (direction === requestNextSlide) {
     var nextSlideIndex = activeSlideIndex + 1
-  } else {
+  } else if (direction === requestPreviousSlide) {
     var prevSlideIndex = activeSlideIndex - 1
   }
   toggleButton(nextSlideIndex || prevSlideIndex)
@@ -200,8 +204,8 @@ function buttonNavigation (direction) {
   translateSlides(slides, slideOffset)
 }
 
-getElementById('next-button').addEventListener('mousedown', function () {buttonNavigation(true)})
-getElementById('prev-button').addEventListener('mousedown', function () {buttonNavigation(false)})
+getElementById('next-button').addEventListener('mousedown', function () {buttonAndSwipeNavigation(requestNextSlide)})
+getElementById('prev-button').addEventListener('mousedown', function () {buttonAndSwipeNavigation(requestPreviousSlide)})
 loopCollection(mediaLinks, function (mediaLink) {
   mediaLink.addEventListener('mousedown', function () {
     mediaLinkNavigation(this)
