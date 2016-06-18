@@ -1,7 +1,12 @@
 /* global slidesData */
-// Required Containers:
+
+// Required Elements:
 var mediaLinksContainer = getElementById('media-links-container')
 var slideContainer = getElementById('slide-container')
+var navigationButtons = getElementsByClassName('navigation-button')
+// The slides:
+var slides = getElementsByClassName('slide')
+var mediaLinks = getElementsByClassName('media-link')
 
 // DOM Functions:
 function getElementById (id) {
@@ -97,12 +102,6 @@ renderData(slidesData)
 
 /* Carousel.js */
 
-// Fetching the navigation buttons:
-var navigationButtons = getElementsByClassName('navigation-button')
-// Fetching the the slides:
-var slides = getElementsByClassName('slide')
-// Fetching the media links:
-var mediaLinks = getElementsByClassName('media-link')
 // Collection fo HTML elements that are qualified to stop the carousel:
 var qualifiedCollection = concatenetCollections([navigationButtons, slides, mediaLinks])
 
@@ -211,3 +210,9 @@ loopCollection(mediaLinks, function (mediaLink) {
     mediaLinkNavigation(this)
   })
 })
+//If screen touch is supported and is relatively a smaller device
+if ('ontouchstart' in document.documentElement) {
+  loopCollection(navigationButtons, function (navigationButton) {
+    navigationButton.style.display = 'none'
+  })
+}

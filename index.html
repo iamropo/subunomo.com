@@ -10,52 +10,135 @@
 	<link href='https://fonts.googleapis.com/css?family=Roboto:300,100,500' rel='stylesheet' type='text/css'>
 	<script src="js/slides-data.js" charset="utf-8"></script>
 </head>
-<body id="base-container" class="flex">
+<body>
 
-	<div class="flex" id="sidebar">
-		<a href="http://subunomo.com" class="flex" id="homepage-link">
-			<img src="images/logo.png" alt="" id="logo">
-			<div id="slogan">
-				Precisely Organic Audio &trade;
+	<div class="base" id="sidebar-container">
+
+		<div class="flex" id="sidebar">
+
+			<div class="flex" id="logo-and-slogan-container">
+				<img src="images/logo.png" alt="" id="logo">
+				<div id="slogan">
+					Precisely Organic Audio &trade;
+				</div>
 			</div>
-		</a>
-		<ul class="flex" id="contact-link-container">
-			<li>
-				<a href="https://twitter.com/subunomo" class="large-contact-link"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>/subunomo</a></li>
-				<a href="https://twitter.com/subunomo" class="medium-contact-link"><i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i></a></li>
-			<li>
-				<a href="https://www.youtube.com/c/subunomo" class="large-contact-link"><i class="fa fa-youtube-square fa-2x" aria-hidden="true"></i>/subunomo</a>
-				<a href="https://www.youtube.com/c/subunomo" class="medium-contact-link"><i class="fa fa-youtube-square fa-lg" aria-hidden="true"></i></a>
-			</li>
-			<li>
-				<a href="https://www.facebook.com/thesubunomo" class="large-contact-link"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>/thesubunomo</a>
-				<a href="https://www.facebook.com/thesubunomo" class="medium-contact-link"><i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i></a>
-			</li>
-			<li>
-				<a href="https://www.instagram.com/subunomo/" class="large-contact-link"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i>/subunomo</a>
-				<a href="https://www.instagram.com/subunomo/" class="medium-contact-link"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a>
-			</li>
-			<li>
-				<a href="mailto:nomosubu@gmail.com" class="large-contact-link"><i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i>/nomosubu@gmail.com</a>
-				<a href="mailto:nomosubu@gmail.com" class="medium-contact-link"><i class="fa fa-envelope-square fa-lg" aria-hidden="true"></i></a>
-			</li>
 
-		</ul>
+			<ul class="flex" id="contact-link-container">
+				<li>
+					<a href="https://twitter.com/subunomo" class="contact-link">
+						<i class="fa fa-twitter-square fa-2x" aria-hidden="true">
+						</i>
+						<span class="username">
+							/subunomo
+						</span>
+					</a>
+				</li>
+
+				<li>
+					<a href="https://www.youtube.com/c/subunomo" class="contact-link">
+						<i class="fa fa-youtube-square fa-2x" aria-hidden="true">
+						</i>
+						<span class="username">
+							/subunomo
+						</span>
+					</a>
+				</li>
+
+				<li>
+					<a href="https://www.facebook.com/thesubunomo" class="contact-link">
+						<i class="fa fa-facebook-square fa-2x" aria-hidden="true">
+						</i>
+						<span class="username">
+							/thesubunomo
+						</span>
+					</a>
+				</li>
+
+				<li>
+					<a href="https://www.instagram.com/subunomo/" class="contact-link">
+						<i class="fa fa-instagram fa-2x" aria-hidden="true">
+						</i>
+						<span class="username">
+							/subunomo
+						</span>
+					</a>
+				</li>
+
+				<li>
+					<a href="mailto:nomosubu@gmail.com" class="contact-link">
+						<i class="fa fa-envelope-square fa-2x" aria-hidden="true">
+						</i>
+						<span class="username">
+							/nomosubu@gmail.com
+						</span>
+					</a>
+				</li>
+			</ul>
+
+		</div>
+
 	</div>
 
-	<div class="flex" id="main-container">
+	<div class="base" id="main-body-container">
 
-		<div class="flex" id="slides-and-buttons-container">
-			<div class="button-container"><img src="images/prev-m.png" alt="Previous" class="navigation-button" id="prev-button"></div>
-			<div class="flex" id="slide-container"></div>
-			<div class="button-container"><img src="images/next-m.png" alt="Next" class="navigation-button" id="next-button"></div>
+		<div class="flex" id="main-body">
+
+			<div class="flex" id="slides-and-buttons-container">
+				<div class="button-container">
+					<img src="images/prev-m.png" alt="Previous" class="navigation-button" id="prev-button">
+				</div>
+				<div class="flex" id="slide-container"></div>
+				<div class="button-container">
+					<img src="images/next-m.png" alt="Next" class="navigation-button" id="next-button">
+				</div>
+			</div>
+
+			<div class="flex" id="media-links-container">
+			<!--List prepared By JS-->
+			</div>
+
+			<div class="flex" id="mobile-view-links-container">
+				<ul class="flex">
+				<li>
+					<a href="https://twitter.com/subunomo" class="small-contact-link">
+						<i class="fa fa-twitter-square fa-2x" aria-hidden="true">
+						</i>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.youtube.com/c/subunomo" class="small-contact-link">
+						<i class="fa fa-youtube-square fa-2x" aria-hidden="true">
+						</i>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.facebook.com/thesubunomo" class="small-contact-link">
+						<i class="fa fa-facebook-square fa-2x" aria-hidden="true">
+						</i>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.instagram.com/subunomo/" class="small-contact-link">
+						<i class="fa fa-instagram fa-2x" aria-hidden="true">
+						</i>
+					</a>
+				</li>
+				<li>
+					<a href="mailto:nomosubu@gmail.com" class="small-contact-link">
+						<i class="fa fa-envelope-square fa-2x" aria-hidden="true">
+						</i>
+					</a>
+				</li>
+				</ul>
+			</div>
+
+			<div class="flex" id="copyright-owner">
+				Copyright &copy; <span id="year">2016 </span>Subu Nomo.
+			</div>
+			<div class="flex" id="developer">
+				Designed and Developed By<a href="http://iamropo.com" id="developer-link"> Hage Ropo</a>
+			</div>
 		</div>
-
-		<div class="flex" id="media-links-container">
-				<!--List prepared By JS-->
-		</div>
-
-		<div class="flex" id="footer">Copyright &copy; <span id="year">2016 </span>Subu Nomo.</div>
 
 	</div>
 
