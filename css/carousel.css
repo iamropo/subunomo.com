@@ -33,7 +33,7 @@
 .description {
 	width: inherit;
 	height: 28px;
-	margin-top: 15px;
+	margin-top: 10px;
 	margin-bottom: 20px;
 	color: #eaeaea;
 	font-size: 1em;
@@ -61,11 +61,11 @@
 }
 
 #prev-button {
-	padding-right: 25%;
+	padding-right: 30%;
 }
 
 #next-button {
-	padding-left: 25%;
+	padding-left: 30%;
 }
 
 #media-links-container {
