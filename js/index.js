@@ -7,7 +7,8 @@ var navigationButtons = getElementsByClassName('navigation-button')
 // The slides:
 var slides = getElementsByClassName('slide')
 var mediaLinks = getElementsByClassName('media-link')
-
+// Current year
+var currentYear = getElementById('current-year')
 // DOM Functions:
 function getElementById (id) {
   return document.getElementById(id)
@@ -203,6 +204,8 @@ function buttonAndSwipeNavigation (direction, activeSlideIndex) {
   translateSlides(slides, slideOffset)
 }
 
+currentYear.innerHTML = new Date().getFullYear()
+
 getElementById('next-button').addEventListener('mousedown', function () {buttonAndSwipeNavigation(requestNextSlide)})
 getElementById('prev-button').addEventListener('mousedown', function () {buttonAndSwipeNavigation(requestPreviousSlide)})
 loopCollection(mediaLinks, function (mediaLink) {
@@ -210,9 +213,4 @@ loopCollection(mediaLinks, function (mediaLink) {
     mediaLinkNavigation(this)
   })
 })
-//If screen touch is supported and is relatively a smaller device
-if ('ontouchstart' in document.documentElement) {
-  loopCollection(navigationButtons, function (navigationButton) {
-    navigationButton.style.display = 'none'
-  })
-}
+
