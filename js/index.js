@@ -8,7 +8,7 @@ var navigationButtons = getElementsByClassName('navigation-button')
 var slides = getElementsByClassName('slide')
 var mediaLinks = getElementsByClassName('media-link')
 // Current year
-var currentYear = getElementById('current-year')
+var currentYear = getElementById('year')
 // DOM Functions:
 function getElementById (id) {
   return document.getElementById(id)
@@ -137,7 +137,7 @@ function startCarousel () {
     translateSlides(slides, slideOffset)
   }
 
-  var carouselTimer = setInterval(switchLink, 3000)
+  var carouselTimer = setInterval(switchLink, 4000)
 
   return carouselTimer
 }
@@ -204,7 +204,7 @@ function buttonAndSwipeNavigation (direction, activeSlideIndex) {
   translateSlides(slides, slideOffset)
 }
 
-currentYear.innerHTML = new Date().getFullYear()
+year.innerHTML = new Date().getFullYear()
 
 getElementById('next-button').addEventListener('mousedown', function () {buttonAndSwipeNavigation(requestNextSlide)})
 getElementById('prev-button').addEventListener('mousedown', function () {buttonAndSwipeNavigation(requestPreviousSlide)})
