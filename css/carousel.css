@@ -3,6 +3,9 @@
 	width: 100%;
 	height: 487px;
 	margin-bottom: 0px;
+	-webkit-justify-content: center;
+	-moz-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
 }
 
@@ -38,6 +41,10 @@
 	color: #eaeaea;
 	font-size: 1em;
 	font-weight: 300;
+	-webkit-align-items: center;
+	-moz-box-align: center;
+	-ms-flex-align: center;
+	-ms-grid-row-align: center;
 	align-items: center;
 }
 
@@ -52,7 +59,13 @@
 	height: 396px;
 	background-color: #3d3d3d;
 	display: inherit;
+	-webkit-align-items: center;
+	-moz-box-align: center;
+	-ms-flex-align: center;
+	-ms-grid-row-align: center;
 	align-items: center;
+	-webkit-align-self: flex-end;
+	-ms-flex-item-align: end;
 	align-self: flex-end;
 }
 
@@ -72,7 +85,14 @@
 	width: 100%;
 	height: 5%;
 	margin-top: 20px;
+	-webkit-justify-content: center;
+	-moz-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
+	-webkit-align-items: center;
+	-moz-box-align: center;
+	-ms-flex-align: center;
+	-ms-grid-row-align: center;
 	align-items: center;
 }
 
