@@ -6,17 +6,17 @@ var slidesData = [
   },
   {
     header: 'I DO',
-    description: 'Compositions, Lyrics, Review Musical Instruments, Guitar Lessons.',
+    description: 'Original music, gear reviews, music production and teach the fine art of music',
     media: 'images/b.jpg'
   },
   {
-    header: 'GENRES',
-    description: 'Rock, Blues, Jazz, Funk, Reggae, Metal.',
+    header: 'I BELIEVE',
+    description: 'In music as a friend, a healer and a reflection of an artist\'s reality.',
     media: 'images/c.jpg'
   },
   {
-    header: 'I BELIEVE',
-    description: 'Music is a higher revelation than all wisdom and philosophy.',
+    header: 'I ASPIRE',
+    description: 'To spread the message of music. To inspire and guide the potent younger talent.',
     media: 'images/d.jpg'
   }
 ]

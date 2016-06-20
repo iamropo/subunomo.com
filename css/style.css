@@ -30,6 +30,7 @@ html, body {
 
 #main-body-container {
 	width: 75%;
+	background-color: #3d3d3d;
 }
 
 * {
@@ -137,10 +138,15 @@ a {
 	padding-left: 20%;
 }
 
+#trademark {
+	color: #aaaaaa;
+}
+
 .small-contact-link {
 	display: none;
 	color: #eaeaea;
 }
+
 /* ---End of Styling of the Contents of the Sidebar---*/
 
 /* Styling the Contents of the Main Body*/
