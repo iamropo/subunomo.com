@@ -6,7 +6,7 @@ var slidesData = [
   },
   {
     header: 'I DO',
-    description: 'Original music, gear reviews, music production and teach the fine art of music',
+    description: 'Original music, gear reviews, music production and teach the fine art of music.',
     media: 'images/b.jpg'
   },
   {
